@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>益健堂｜中老年健康体验门店 V3</title>
+<meta name="description" content="先体验，再决定。中老年健康体验、分时到店、真实设备与产品了解。">
+<style>
+:root{
+ --ink:#24352d;--ink2:#31463a;--paper:#fff8ee;--paper2:#f3eadf;--white:#fff;
+ --orange:#d96b43;--orange2:#f0ae77;--green:#718b76;--green2:#dce8dc;--line:rgba(36,53,45,.13);
+ --shadow:0 30px 90px rgba(23,35,29,.13);--r:34px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;overflow-x:hidden}
+button,a{font:inherit}a{color:inherit}.wrap{width:min(1200px,91vw);margin:auto}
+.nav{position:fixed;z-index:80;left:50%;top:18px;transform:translateX(-50%);width:min(1180px,94vw);height:64px;border-radius:22px;background:rgba(255,250,243,.88);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 22px;box-shadow:0 14px 50px rgba(23,35,29,.08)}
+.brand{font-weight:950;letter-spacing:.02em}.navlinks{display:flex;gap:25px;font-size:13px}.navlinks a{text-decoration:none;color:#5c685f}.navcta{text-decoration:none;background:var(--ink);color:#fff;padding:11px 17px;border-radius:999px;font-weight:900}
+section{position:relative}.kicker{font-size:11px;letter-spacing:.2em;font-weight:950;color:var(--orange)}.display{font-size:clamp(58px,8.2vw,122px);line-height:.98;letter-spacing:-.05em;margin:16px 0 24px;font-weight:950}.big{font-size:clamp(45px,5.7vw,82px);line-height:.98;letter-spacing:-.055em;margin:14px 0 18px}.lead{font-size:17px;line-height:1.95;color:#657069;max-width:680px}.muted{color:#758079}
+.btns{display:flex;gap:11px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:900;border:1px solid var(--line);transition:.25s}.btn.primary{background:#d9653f;color:#fff;border-color:transparent;box-shadow:0 10px 24px rgba(217,101,63,.18)}.btn:hover{transform:translateY(-3px)}
+
+/* HERO: uplifting ivory field + warm interactive particles */
+.hero{min-height:100svh;background:linear-gradient(135deg,#fff7ec 0%,#ffe4cf 38%,#f8efe4 66%,#dfeadf 100%);color:var(--ink);overflow:hidden;display:grid;place-items:center}
+#particles{position:absolute;inset:0;width:100%;height:100%;opacity:.92}
+.hero:after{content:"";position:absolute;inset:0;background:
+radial-gradient(circle at 68% 34%,rgba(232,139,84,.20),transparent 22%),
+radial-gradient(circle at 82% 72%,rgba(113,139,118,.18),transparent 25%),
+linear-gradient(180deg,transparent 78%,rgba(255,255,255,.42));pointer-events:none}
+.hero-inner{position:relative;z-index:2;width:min(1200px,91vw);padding:145px 0 80px}
+.hero .kicker{color:#b85d3c}.hero .display em{font-style:normal;color:#d76b43}.hero .lead{color:#5f6b63;max-width:650px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:40px}.pill{padding:10px 13px;border:1px solid rgba(23,35,29,.12);border-radius:999px;background:rgba(255,255,255,.52);font-size:12px;font-weight:900;backdrop-filter:blur(8px)}
+.scrollmark{position:absolute;right:4vw;bottom:40px;z-index:2;writing-mode:vertical-rl;font-size:10px;letter-spacing:.22em;color:rgba(23,35,29,.42)}
+
+/* TIME: the schedule is the graphic */
+.time-section{padding:130px 0 120px;background:linear-gradient(180deg,#fffdf9 0%,#f5f0e9 100%)}
+.time-head{display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:end;margin-bottom:70px}
+.time-stage{display:grid;grid-template-columns:1.08fr .92fr;gap:38px;align-items:stretch}
+.time-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;align-content:start}
+.time-chip{position:relative;height:132px;border:1px solid rgba(36,53,45,.08);border-radius:26px;background:#fff;color:var(--ink);cursor:pointer;text-align:left;padding:18px;overflow:hidden;transition:.35s}
+.time-chip:before{content:"";position:absolute;inset:auto 0 0;height:0;background:var(--ink);transition:.35s}
+.time-chip span{position:relative;z-index:1;font-size:29px;font-weight:950;letter-spacing:-.04em;transition:.35s}
+.time-chip:hover,.time-chip.active{transform:translateY(-4px)}.time-chip:hover:before,.time-chip.active:before{height:100%}.time-chip:hover span,.time-chip.active span{color:#fff}
+.time-note{border-radius:32px;background:#ffffff;padding:42px;display:flex;flex-direction:column;justify-content:space-between;min-height:416px}
+.time-note strong{font-size:74px;letter-spacing:-.06em}.time-note h3{font-size:29px;margin:12px 0}.time-note p{color:#6c766f;line-height:1.9}.capacity{font-size:12px;font-weight:900;color:var(--orange);letter-spacing:.08em}
+
+/* STORY IMAGE — full, no awkward crop */
+.story{padding:0 0 120px;background:linear-gradient(180deg,#e7f0e5 0%,#dce8da 100%)}
+.story-frame{position:relative;border-radius:42px;overflow:hidden;min-height:720px;box-shadow:var(--shadow);background:#ddd}
+.story-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.story-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,35,29,.77),rgba(23,35,29,.20) 65%,transparent)}
+.story-copy{position:relative;z-index:2;color:#fff;max-width:610px;padding:64px;min-height:720px;display:flex;flex-direction:column;justify-content:flex-end}.story-copy .lead{color:rgba(255,255,255,.82)}
+
+/* LIMITED EVENT: no forced stock breakfast photo */
+.event{padding:120px 0;background:linear-gradient(180deg,#f7d7bf 0%,#f3c29f 100%)}
+.event-shell{display:grid;grid-template-columns:.92fr 1.08fr;gap:22px;align-items:stretch}
+.days{border-radius:38px;background:linear-gradient(145deg,#c95c37,#ed8e55);color:#fff;padding:50px;min-height:600px;display:flex;flex-direction:column;justify-content:space-between}
+.days .num{font-size:clamp(130px,18vw,260px);font-weight:950;letter-spacing:-.1em;line-height:.72;margin-top:22px}.days p{color:rgba(255,255,255,.86);line-height:1.9}
+.event-info{border-radius:38px;background:linear-gradient(145deg,#2f4d3c,#58715e);color:#fff;padding:52px;display:grid;align-content:center;overflow:hidden;position:relative}
+.event-info:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;border:1px solid rgba(255,255,255,.10);right:-90px;top:-80px;box-shadow:0 0 0 80px rgba(255,255,255,.025),0 0 0 160px rgba(255,255,255,.018)}
+.event-info h3{font-size:48px;margin:10px 0 20px}.event-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px}.event-item{padding:18px;border-radius:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);font-weight:850}
+
+/* PRODUCTS: one hero product at a time */
+.products{padding:125px 0;background:linear-gradient(180deg,#f3dfd1 0%,#eee8df 34%,#e7ebe5 72%,#dfe9dd 100%)}
+.product-head{display:grid;grid-template-columns:1fr .8fr;gap:80px;align-items:end;margin-bottom:56px}
+.product-stage{display:grid;grid-template-columns:190p
